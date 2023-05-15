@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="https://picocss.com/favicon.ico" />
+  <link rel="canonical" href="https://picocss.com/examples/classless/" />
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css"
+/>
+  <title>Document</title>
+</head>
+<body>
+  <header>
+  <hgroup>
+    <h1>당신의 번아웃 지수는?</h1>
+    <h2>사원들의 번아웃 상태 체크하기 <code># 사원복지</code></h2>
+  </hgroup>
+  <div>
+    <h2>
+    {% if rate %}
+       당신의 번아웃 지수는 {{ rate }}입니다.
+    {% endif %}</h2>
+  </div>
+</header>
+<main>
+<section id="preview">
+  <h2>더 나은 업무 성과를 위해 휴식도 필요합니다.</h2>
+  <p>
+    0.0 ~ 0.3 : 양호한 수준입니다.<br>
+    0.4 ~ 0.7 : 관리가 필요합니다.<br>
+    0.8 ~ 10.0 : Burn Out!<br>
+    출처 데이터셋 : 
+    <a href="https://www.kaggle.com/datasets/blurredmachine/are-your-employees-burning-out">Are Your Employees Burning Out?</a>
+    <br> 
+  </p>
+</section>
+
+  <section id="form">
+  <form method="post" action="/">
+
+  <fieldset>
+  <legend><strong>성별</strong></legend>
+  <label for="male">
+  <input type="radio" id="male" name="gender" value="0" checked="checked">
+  Male</label>
+  <label for="female">
+  <input type="radio" id="female" name="gender" value="1">
+  Female</label>
+  </fieldset>
+  <fieldset>
+  <legend><strong>업무종류</strong></legend>
+  <label for="Service">
+  <input type="radio" id="Service" name="type" value="1" checked="checked">
+  Service</label>
+  <label for="Product">
+  <input type="radio" id="Product" name="type" value="0">
+  Product</label>
+  </fieldset>
+  <fieldset>
+  <legend><strong>재택가능여부</strong></legend>
+  <label for="Yes">
+  <input type="radio" id="Yes" name="wfh" value="1" checked="checked">
+  Yes</label>
+  <label for="No">
+  <input type="radio" id="No" name="wfh" value="0">
+  No</label>
+</fieldset>
+
+ 직장 내에서 신임 수준<input type="number" name="Designation" step="0.1" min="0.0" max="5.0" placeholder="0.0~5.0입력" required><br>
+ 하루 근무 시간<input type="number" name="RA" step="0.1" min="0.0" max="10.0" placeholder="0.0~10.0입력" required><br>
+ 현재 정신적 피로도 <input type="number" name="MFS" step="0.1" min="0.0" max="10.0" placeholder="0.0~10.0입력" required><br>
+ <input type="submit" value="확인하기">
+  </main>
+</section>
+</form>
+
+
+</body>
+</html>
